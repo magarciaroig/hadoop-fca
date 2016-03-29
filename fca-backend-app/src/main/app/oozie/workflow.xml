@@ -1,0 +1,47 @@
+<workflow-app xmlns="uri:oozie:workflow:0.4" name="mgarciaroig-uoc-pfc-fca-workflow">
+			
+	<start to="main"/>
+	
+	<decision name="main">
+		<switch>
+			<case to="etl">${wf:conf("jump.to") eq "etl"}</case>
+			<case to="analysis">${wf:conf("jump.to") eq "analysis"}</case>
+			<case to="export">${wf:conf("jump.to") eq "export"}</case>
+			<default to="end"/>
+		</switch>	
+	</decision>
+					       	       
+    <action name="etl">
+		<sub-workflow>
+			<app-path>${oozieAppHdfsPath}/etl-workflow.xml</app-path>
+			<propagate-configuration />
+		</sub-workflow>
+		<ok to="end" />
+		<error to="fail" />
+	</action>
+	
+	<action name="analysis">
+		<sub-workflow>
+			<app-path>${oozieAppHdfsPath}/analysis-workflow.xml</app-path>
+			<propagate-configuration />
+		</sub-workflow>
+		<ok to="end" />
+		<error to="fail" />
+	</action>
+	
+	<action name="export">
+		<sub-workflow>
+			<app-path>${oozieAppHdfsPath}/export-workflow.xml</app-path>
+			<propagate-configuration />
+		</sub-workflow>
+		<ok to="end" />
+		<error to="fail" />
+	</action>
+        
+        
+    <kill name="fail">
+        <message>Action failed, error message[${wf:errorMessage(wf:lastErrorNode())}]</message>
+    </kill>
+    
+    <end name="end"/>
+</workflow-app>

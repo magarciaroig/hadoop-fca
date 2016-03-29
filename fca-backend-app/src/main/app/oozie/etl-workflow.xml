@@ -1,0 +1,437 @@
+<workflow-app xmlns="uri:oozie:workflow:0.4" name="mgarciaroig-uoc-pfc-fca-etl-workflow">
+	
+	<global>
+		<job-tracker>${jobTracker}</job-tracker>
+        <name-node>${nameNode}</name-node>        
+        <job-xml>${oozieAppHdfsPath}/configuration.xml</job-xml>
+	</global>
+	
+	<start to="etl-iaea-data-import"/>	
+					       	       
+    <action name="etl-iaea-data-import">    	
+        <java>   
+        	<prepare>
+                <delete path="${etlHdfsImportedFile}"/>
+			</prepare>             	
+        	<configuration>
+				<property>
+	             	<name>dataImport.RawIAEAReactorResearchFilePathName</name>
+	                <value>${etlHdfsImportFile}</value>
+	            </property>
+	            <property>
+	                <name>dataImport.ImportedIAEAReactorResearchFilePathName</name>
+	                <value>${etlHdfsImportedFile}</value>
+	            </property>                          
+			</configuration>
+            <main-class>com.mgarciaroig.pfc.fca.etl.action.dataprepare.IAEADataPrepareAction</main-class>
+            <capture-output />       
+        </java>
+        <ok to="etl-iaea-data-convert"/>        
+        <error to="fail"/>
+    </action>
+    
+    <action name="etl-iaea-data-convert">    	       
+        <java>       
+        	<prepare>
+                <delete path="${etlHdfsConvertedFile}"/>
+			</prepare>             	
+        	<configuration>
+				<property>
+	             	<name>dataImport.RawIAEAReactorResearchFilePathName</name>
+	                <value>${etlHdfsImportFile}</value>
+	            </property>
+	            <property>
+	                <name>dataImport.ImportedIAEAReactorResearchFilePathName</name>
+	                <value>${etlHdfsImportedFile}</value>
+	            </property>
+	            <property>
+	                <name>dataImport.ConvertedIAEAReactorResearchFilePathName</name>
+	                <value>${etlHdfsConvertedFile}</value>
+	            </property>               
+			</configuration>
+            <main-class>com.mgarciaroig.pfc.fca.etl.action.dataconvert.IAEADataConvertAction</main-class>
+            <capture-output />       
+        </java>
+        <ok to="etl-field-values-enumerator"/>        
+        <error to="fail"/>
+    </action>       
+    
+    <action name="etl-field-values-enumerator">    	
+        
+        <map-reduce>    		
+        	<prepare>
+                <delete path="${etlHdfsEnumerationsDir}"/>
+			</prepare>
+    		<configuration>
+    			<property>
+	                <name>mapreduce.map.class</name>
+	                <value>com.mgarciaroig.pfc.fca.etl.action.discretization.enumerator.EnumeratorMapper</value>
+	            </property>
+	            
+	            <property>
+	                <name>mapreduce.reduce.class</name>
+	                <value>com.mgarciaroig.pfc.fca.etl.action.discretization.enumerator.EnumeratorReducer</value>
+	            </property>
+	            	            
+	            <property>
+	                <name>mapred.input.dir</name>
+	                <value>${etlHdfsConvertedDir}</value>
+	            </property>
+	            
+	            <property>
+	                <name>mapred.output.dir</name>
+	                <value>${etlHdfsEnumerationsDir}</value>
+	            </property>
+	            
+	            <property>
+	                <name>mapreduce.inputformat.class</name>
+	                <value>org.apache.hadoop.mapreduce.lib.input.SequenceFileInputFormat</value>
+	            </property>
+	            
+	            <property>
+	                <name>mapreduce.outputformat.class</name>
+	                <value>org.apache.hadoop.mapreduce.lib.output.SequenceFileOutputFormat</value>
+	            </property>
+	            
+	            <property>
+	                <name>mapred.input.key.class</name>
+	                <value>org.apache.hadoop.io.NullWritable</value>
+	            </property>
+	            
+	            <property>
+	                <name>mapred.input.value.class</name>
+	                <value>org.apache.hadoop.io.SortedMapWritable</value>
+	            </property>
+	            	            	            
+	            <property>
+	                <name>mapred.mapoutput.key.class</name>
+	                <value>org.apache.hadoop.io.Text</value>
+	            </property>
+	            
+	            <property>
+	                <name>mapred.mapoutput.value.class</name>
+	                <value>org.apache.hadoop.io.Text</value>
+	            </property>
+	            
+	            <property>
+	                <name>mapred.output.key.class</name>
+	                <value>org.apache.hadoop.io.IntWritable</value>
+	            </property>
+	            
+	            <property>
+	                <name>mapred.output.value.class</name>
+	                <value>org.apache.hadoop.io.Text</value>
+	            </property>
+	            	            	            
+	            <property>
+	                <name>mapred.mapper.new-api</name>
+	                <value>true</value>
+	            </property>
+	            
+	            <property>
+	                <name>mapred.reducer.new-api</name>
+	                <value>true</value>
+	            </property>
+	            
+	            <property>
+	                <name>etlHdfsEnumerationsDir</name>
+	                <value>${etlHdfsEnumerationsDir}</value>
+	            </property>
+	            
+    		</configuration>
+    	</map-reduce>
+            	    	
+    	<ok to="etl-discretization-classifier"/>    	
+        <error to="fail"/>
+    </action>
+    
+    <action name="etl-discretization-classifier">    	
+    	<map-reduce>    		
+        	<prepare>
+                <delete path="${etlHdfsDiscretizedDir}"/>
+			</prepare>
+    		<configuration>
+    			<property>
+	                <name>mapreduce.map.class</name>
+	                <value>com.mgarciaroig.pfc.fca.etl.action.discretization.codifier.DiscretizationCodifierMapper</value>
+	            </property>
+	            	            
+	            <property>
+	                <name>mapred.input.dir</name>
+	                <value>${etlHdfsConvertedDir}</value>
+	            </property>
+	            
+	            <property>
+	                <name>mapred.output.dir</name>
+	                <value>${etlHdfsDiscretizedDir}</value>
+	            </property>
+	            
+	            <property>
+	                <name>mapreduce.inputformat.class</name>
+	                <value>org.apache.hadoop.mapreduce.lib.input.SequenceFileInputFormat</value>
+	            </property>
+	            
+	            <property>
+	                <name>mapreduce.outputformat.class</name>
+	                <value>org.apache.hadoop.mapreduce.lib.output.SequenceFileOutputFormat</value>
+	            </property>
+	            
+	            <property>
+	                <name>mapred.input.key.class</name>
+	                <value>org.apache.hadoop.io.NullWritable</value>
+	            </property>
+	            
+	            <property>
+	                <name>mapred.input.value.class</name>
+	                <value>org.apache.hadoop.io.SortedMapWritable</value>
+	            </property>
+	            
+	            <property>
+	                <name>mapred.output.key.class</name>
+	                <value>org.apache.hadoop.io.NullWritable</value>
+	            </property>
+	            
+	            <property>
+	                <name>mapred.output.value.class</name>
+	                <value>org.apache.hadoop.io.SortedMapWritable</value>
+	            </property>
+	            
+	            <property>
+	                <name>mapred.reduce.tasks</name>
+	                <value>0</value>
+	            </property>
+	            
+	            <property>
+	                <name>mapred.mapper.new-api</name>
+	                <value>true</value>
+	            </property>
+	            
+	            <property>
+	                <name>etlHdfsEnumerationsDir</name>
+	                <value>${etlHdfsEnumerationsDir}</value>
+	            </property>
+	            
+    		</configuration>
+    	</map-reduce>
+    	
+    	<ok to="etl-mahout-preparation"/>    	
+        <error to="fail"/>
+    </action>        
+    
+    <action name="etl-mahout-preparation">    	
+    	<map-reduce>    		
+        	<prepare>
+                <delete path="${etlHdfsMahoutInput}"/>
+			</prepare>
+    		<configuration>
+    			<property>
+	                <name>mapreduce.map.class</name>
+	                <value>com.mgarciaroig.pfc.fca.etl.action.discretization.codifier.MahoutPreparationMapper</value>
+	            </property>
+	            
+	            <property>
+	                <name>mapreduce.reduce.class</name>
+	                <value>com.mgarciaroig.pfc.fca.etl.action.discretization.codifier.MahoutPreparationReducer</value>
+	            </property>
+	            	            
+	            <property>
+	                <name>mapred.input.dir</name>
+	                <value>${etlHdfsConvertedDir}</value>
+	            </property>
+	            
+	            <property>
+	                <name>mapred.output.dir</name>
+	                <value>${etlHdfsMahoutInput}</value>
+	            </property>
+	            
+	            <property>
+	                <name>mapreduce.inputformat.class</name>
+	                <value>org.apache.hadoop.mapreduce.lib.input.SequenceFileInputFormat</value>
+	            </property>
+	            
+	            <property>
+	                <name>mapreduce.outputformat.class</name>
+	                <value>org.apache.hadoop.mapreduce.lib.output.SequenceFileOutputFormat</value>
+	            </property>
+	            
+	            <property>
+	                <name>mapred.input.key.class</name>
+	                <value>org.apache.hadoop.io.NullWritable</value>
+	            </property>
+	            
+	            <property>
+	                <name>mapred.input.value.class</name>
+	                <value>org.apache.hadoop.io.SortedMapWritable</value>
+	            </property>
+	            
+	            <property>
+	                <name>mapred.mapoutput.key.class</name>
+	                <value>org.apache.hadoop.io.Text</value>
+	            </property>
+	            
+	            <property>
+	                <name>mapred.mapoutput.value.class</name>
+	                <value>org.apache.hadoop.io.DoubleWritable</value>
+	            </property>
+	            
+	            <property>
+	                <name>mapred.output.key.class</name>
+	                <value>org.apache.hadoop.io.NullWritable</value>
+	            </property>
+	            
+	            <property>
+	                <name>mapred.output.value.class</name>
+	                <value>org.apache.mahout.math.VectorWritable</value>
+	            </property>
+	            
+	            <property>
+	                <name>mapred.reduce.tasks</name>
+	                <value>1</value>
+	            </property>
+	            
+	            <property>
+	                <name>mapred.mapper.new-api</name>
+	                <value>true</value>
+	            </property>	            	            
+	            
+	            <property>
+	                <name>mapred.reducer.new-api</name>
+	                <value>true</value>
+	            </property>	            
+    		</configuration>
+    	</map-reduce>
+    	
+    	<ok to="etl-mahout-canopy-clusterization"/>
+        <error to="fail"/>
+    </action>
+    
+    <action name="etl-mahout-canopy-clusterization">    	       
+        <java>       
+        	<prepare>
+                <delete path="${etlHdfsMahoutCanopyOutput}"/>
+			</prepare>             	
+        	<configuration>
+				<property>
+	             	<name>etlHdfsMahoutInput</name>
+	                <value>${etlHdfsMahoutInput}</value>
+	            </property>
+	            <property>
+	                <name>etlHdfsMahoutCanopyOutput</name>
+	                <value>${etlHdfsMahoutCanopyOutput}</value>
+	            </property>	                          
+			</configuration>
+            <main-class>com.mgarciaroig.pfc.fca.etl.action.clusterization.CanopyClusterizationAction</main-class>
+            <capture-output />       
+        </java>
+        <ok to="etl-mahout-kmeans-clusterization"/>        
+        <error to="fail"/>
+    </action>    
+    
+    <action name="etl-mahout-kmeans-clusterization">    	       
+        <java>       
+        	<prepare>
+                <delete path="${etlHdfsMahoutKmeansOutput}"/>
+			</prepare>             	
+        	<configuration>
+				<property>
+	             	<name>etlHdfsMahoutInput</name>
+	                <value>${etlHdfsMahoutInput}</value>
+	            </property>
+	            <property>
+	                <name>etlHdfsMahoutCanopyOutput</name>
+	                <value>${etlHdfsMahoutCanopyOutput}</value>
+	            </property>
+	            <property>
+	                <name>etlHdfsMahoutKmeansOutput</name>
+	                <value>${etlHdfsMahoutKmeansOutput}</value>
+	            </property>	                          
+			</configuration>
+            <main-class>com.mgarciaroig.pfc.fca.etl.action.clusterization.KmeansClusterizationAction</main-class>
+            <capture-output />       
+        </java>
+        <ok to="etl-formal-context-generator"/>        
+        <error to="fail"/>
+    </action>
+    
+    <action name="etl-formal-context-generator">    	
+    	<map-reduce>    		
+        	<prepare>
+                <delete path="${etlHdfsFormalContextDir}"/>
+			</prepare>
+    		<configuration>
+    			<property>
+	                <name>mapreduce.map.class</name>
+	                <value>com.mgarciaroig.pfc.fca.etl.action.formalcontext.FormalContextMapper</value>
+	            </property>
+	            	            
+	            <property>
+	                <name>mapred.input.dir</name>
+	                <value>${etlHdfsDiscretizedDir}</value>
+	            </property>
+	            
+	            <property>
+	                <name>mapred.output.dir</name>
+	                <value>${etlHdfsFormalContextDir}</value>
+	            </property>
+	            
+	            <property>
+	                <name>mapreduce.inputformat.class</name>
+	                <value>org.apache.hadoop.mapreduce.lib.input.SequenceFileInputFormat</value>
+	            </property>
+	            
+	            <property>
+	                <name>mapreduce.outputformat.class</name>
+	                <value>org.apache.hadoop.mapreduce.lib.output.SequenceFileOutputFormat</value>
+	            </property>
+	            
+	            <property>
+	                <name>mapred.input.key.class</name>
+	                <value>org.apache.hadoop.io.NullWritable</value>
+	            </property>
+	            
+	            <property>
+	                <name>mapred.input.value.class</name>
+	                <value>org.apache.hadoop.io.SortedMapWritable</value>
+	            </property>
+	            
+	            <property>
+	                <name>mapred.output.key.class</name>
+	                <value>org.apache.hadoop.io.Text</value>
+	            </property>
+	            
+	            <property>
+	                <name>mapred.output.value.class</name>
+	                <value>org.apache.hadoop.io.SortedMapWritable</value>
+	            </property>
+	            
+	            <property>
+	                <name>mapred.reduce.tasks</name>
+	                <value>0</value>
+	            </property>
+	            
+	            <property>
+	                <name>mapred.mapper.new-api</name>
+	                <value>true</value>
+	            </property>
+	            	            
+	            <property>
+	                <name>etlHdfsMahoutKmeansOutput</name>
+	                <value>${etlHdfsMahoutKmeansOutput}</value>
+	            </property>
+	            	            	            
+	            <property>
+	                <name>etlHdfsEnumerationsDir</name>
+	                <value>${etlHdfsEnumerationsDir}</value>
+	            </property>	            
+    		</configuration>
+    	</map-reduce>
+    	
+    	<ok to="end"/>
+        <error to="fail"/>
+    </action>        
+        
+    <kill name="fail">
+        <message>Action failed, error message[${wf:errorMessage(wf:lastErrorNode())}]</message>
+    </kill>
+    <end name="end"/>
+</workflow-app>

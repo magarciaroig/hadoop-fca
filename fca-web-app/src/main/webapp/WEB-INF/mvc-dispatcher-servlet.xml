@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans:beans xmlns:beans="http://www.springframework.org/schema/beans"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:jpa="http://www.springframework.org/schema/data/jpa"
+	xsi:schemaLocation="
+        http://www.springframework.org/schema/beans     
+        http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/context 
+        http://www.springframework.org/schema/context/spring-context.xsd
+        http://www.springframework.org/schema/data/jpa
+    	http://www.springframework.org/schema/data/jpa/spring-jpa.xsd">
+    	
+    <context:annotation-config />
+
+	<context:component-scan base-package="edu.uoc.mgarciaroig.pfc.fca.web" />
+	
+	<beans:import resource="hibernate.xml" />				
+	
+	<beans:bean
+		class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+		<beans:property name="prefix">
+			<beans:value>/WEB-INF/pages/</beans:value>
+		</beans:property>
+		<beans:property name="suffix">
+			<beans:value>.jsp</beans:value>
+		</beans:property>
+	</beans:bean>
+
+</beans:beans>

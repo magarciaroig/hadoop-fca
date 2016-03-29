@@ -1,0 +1,162 @@
+<workflow-app xmlns="uri:oozie:workflow:0.4" name="mgarciaroig-uoc-pfc-fca-export-workflow">
+	
+	<global>
+		<job-tracker>${jobTracker}</job-tracker>
+        <name-node>${nameNode}</name-node>        
+        <job-xml>${oozieAppHdfsPath}/configuration.xml</job-xml>
+        <configuration>
+        	<property>
+        		<name>jdbc.driver.name</name>
+        		<value>${databaseDriver}</value>
+        	</property>
+        	<property>
+        		<name>jdbc.connection.string</name>
+        		<value><![CDATA[${databaseConnString}]]></value>
+        	</property>
+        	<property>
+        		<name>user</name>
+        		<value>${databaseUser}</value>
+        	</property>
+        	<property>
+        		<name>password</name>
+        		<value>${databasePassword}</value>
+        	</property>        	
+        </configuration>
+	</global>
+	
+	<start to="export-formal-concepts-merge"/>	
+	
+	<action name="export-formal-concepts-merge">
+    	<map-reduce>    		
+        	<prepare>
+                <delete path="${exportMergeConceptsHdfsDir}"/>
+			</prepare>
+    		<configuration>
+    			<property>
+	                <name>mapreduce.map.class</name>
+	                <value>com.mgarciaroig.pfc.fca.export.action.MergeFormalConceptsMapper</value>
+	            </property>
+	            
+	            <property>
+	                <name>mapreduce.reduce.class</name>
+	                <value>com.mgarciaroig.pfc.fca.export.action.MergeFormalConceptsReducer</value>
+	            </property>
+	            	            
+	            <property>
+	                <name>mapred.input.dir</name>
+	                <value>${analysisFcaMaxConceptHdfsPath}/*.seq,${analysisFcaMinConceptHdfsPath}/*.seq,${analysisFcaIterationsHdfsPath}/*/part*</value>
+	            </property>
+	            
+	            <property>
+	                <name>mapred.output.dir</name>
+	                <value>${exportMergeConceptsHdfsDir}</value>
+	            </property>
+	            
+	            <property>
+	                <name>mapreduce.inputformat.class</name>
+	                <value>org.apache.hadoop.mapreduce.lib.input.SequenceFileInputFormat</value>
+	            </property>
+	            
+	            <property>
+	                <name>mapreduce.outputformat.class</name>
+	                <value>org.apache.hadoop.mapreduce.lib.output.SequenceFileOutputFormat</value>
+	            </property>
+	            
+	            <property>
+	                <name>mapred.input.key.class</name>
+	                <value>com.mgarciaroig.pfc.fca.analysis.model.FormalConceptBuildingKey</value>
+	            </property>
+	            
+	            <property>
+	                <name>mapred.input.value.class</name>
+	                <value>com.mgarciaroig.pfc.fca.analysis.model.FormalConcept</value>
+	            </property>
+	            
+	            <property>
+	                <name>mapred.mapoutput.key.class</name>
+	                <value>org.apache.hadoop.io.NullWritable</value>
+	            </property>
+	            
+	            <property>
+	                <name>mapred.mapoutput.value.class</name>
+	                <value>com.mgarciaroig.pfc.fca.analysis.model.FormalConcept</value>
+	            </property>
+	            
+	            <property>
+	                <name>mapred.output.key.class</name>
+	                <value>org.apache.hadoop.io.NullWritable</value>
+	            </property>
+	            
+	            <property>
+	                <name>mapred.output.value.class</name>
+	                <value>com.mgarciaroig.pfc.fca.analysis.model.FormalConcept</value>
+	            </property>
+	            	            	            
+	            <property>
+	                <name>mapred.mapper.new-api</name>
+	                <value>true</value>
+	            </property>	            	            
+	            
+	            <property>
+	                <name>mapred.reducer.new-api</name>
+	                <value>true</value>
+	            </property>	 
+	            
+	            <property>
+	                <name>mapred.reduce.tasks</name>
+	                <value>1</value>
+	            </property>           
+    		</configuration>
+    	</map-reduce>
+    	
+    	<ok to="export-objects"/>    	
+        <error to="fail"/>
+    </action>				       	                                                                                     
+    
+    <action name="export-objects">    	
+        <java>           	             
+        	<configuration>
+				<property>
+	             	<name>etlHdfsConvertedFile</name>
+	                <value>${etlHdfsConvertedFile}</value>
+	            </property>
+	            <property>
+	                <name>etlHdfsDiscretizedDir</name>
+	                <value>${etlHdfsDiscretizedDir}</value>
+	            </property>	            	                               
+			</configuration>
+            <main-class>com.mgarciaroig.pfc.fca.export.action.ExportObjectsAction</main-class>
+            <capture-output />       
+        </java>
+        <ok to="export-formal-concepts"/>
+        <error to="fail"/>
+    </action>
+    
+    <action name="export-formal-concepts">    	
+        <java>           	             
+        	<configuration>
+				<property>
+	             	<name>etlHdfsFormalContextHdfsPath</name>
+	                <value>${etlHdfsFormalContextHdfsPath}</value>
+	            </property>
+	            <property>
+	                <name>analysisDataPreparationHdfsPath</name>
+	                <value>${analysisDataPreparationHdfsPath}</value>
+	            </property>	            	                               
+	            <property>
+	                <name>exportMergeConceptsHdfsPath</name>
+	                <value>${exportMergeConceptsHdfsPath}</value>
+	            </property>
+			</configuration>
+            <main-class>com.mgarciaroig.pfc.fca.export.action.ExportFormalConceptsAction</main-class>
+            <capture-output />       
+        </java>
+        <ok to="end"/>
+        <error to="fail"/>
+    </action>
+    
+    <kill name="fail">
+        <message>Action failed, error message[${wf:errorMessage(wf:lastErrorNode())}]</message>
+    </kill>
+    <end name="end"/>
+</workflow-app>

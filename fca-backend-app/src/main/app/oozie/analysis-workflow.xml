@@ -1,0 +1,186 @@
+<workflow-app xmlns="uri:oozie:workflow:0.4" name="mgarciaroig-uoc-pfc-fca-analysis-workflow">
+	
+	<global>
+		<job-tracker>${jobTracker}</job-tracker>
+        <name-node>${nameNode}</name-node>        
+        <job-xml>${oozieAppHdfsPath}/configuration.xml</job-xml>
+	</global>
+	
+	<start to="fca-formal-context-data-preparation"/>	
+					       	                                                                                      
+    <action name="fca-formal-context-data-preparation">
+    	<map-reduce>    		
+        	<prepare>
+                <delete path="${analysisDataPreparationHdfsPath}"/>
+			</prepare>
+    		<configuration>
+    			<property>
+	                <name>mapreduce.map.class</name>
+	                <value>com.mgarciaroig.pfc.fca.analysis.action.dataprepare.FormalContextDataPrepareMapper</value>
+	            </property>
+	            
+	            <property>
+	                <name>mapreduce.reduce.class</name>
+	                <value>com.mgarciaroig.pfc.fca.analysis.action.dataprepare.FormalContextDataPrepareReducer</value>
+	            </property>
+	            	            
+	            <property>
+	                <name>mapred.input.dir</name>
+	                <value>${etlHdfsFormalContextDir}</value>
+	            </property>
+	            
+	            <property>
+	                <name>mapred.output.dir</name>
+	                <value>${analysisDataPreparationHdfsPath}</value>
+	            </property>
+	            
+	            <property>
+	                <name>mapreduce.inputformat.class</name>
+	                <value>org.apache.hadoop.mapreduce.lib.input.SequenceFileInputFormat</value>
+	            </property>
+	            
+	            <property>
+	                <name>mapreduce.outputformat.class</name>
+	                <value>org.apache.hadoop.mapreduce.lib.output.SequenceFileOutputFormat</value>
+	            </property>
+	            
+	            <property>
+	                <name>mapred.input.key.class</name>
+	                <value>org.apache.hadoop.io.Text</value>
+	            </property>
+	            
+	            <property>
+	                <name>mapred.input.value.class</name>
+	                <value>org.apache.hadoop.io.SortedMapWritable</value>
+	            </property>
+	            
+	            <property>
+	                <name>mapred.mapoutput.key.class</name>
+	                <value>org.apache.hadoop.io.Text</value>
+	            </property>
+	            
+	            <property>
+	                <name>mapred.mapoutput.value.class</name>
+	                <value>org.apache.hadoop.io.Text</value>
+	            </property>
+	            
+	            <property>
+	                <name>mapred.output.key.class</name>
+	                <value>org.apache.hadoop.io.NullWritable</value>
+	            </property>
+	            
+	            <property>
+	                <name>mapred.output.value.class</name>
+	                <value>org.apache.hadoop.io.Text</value>
+	            </property>
+	            	            	            
+	            <property>
+	                <name>mapred.mapper.new-api</name>
+	                <value>true</value>
+	            </property>	            	            
+	            
+	            <property>
+	                <name>mapred.reducer.new-api</name>
+	                <value>true</value>
+	            </property>	            
+    		</configuration>
+    	</map-reduce>
+    	
+    	<ok to="fca-initial-iteration-data-preparation"/>    	
+        <error to="fail"/>
+    </action>
+    
+    <action name="fca-initial-iteration-data-preparation">    	
+        <java>   
+        	<prepare>               
+                <delete path="${analysisFcaMaxConceptHdfsPath}" />
+                <mkdir path="${analysisFcaMaxConceptHdfsPath}" />
+			</prepare>             	
+        	<configuration>
+				<property>
+	             	<name>etlHdfsFormalContextHdfsPath</name>
+	                <value>${etlHdfsFormalContextHdfsPath}</value>
+	            </property>
+	            <property>
+	                <name>analysisDataPreparationHdfsPath</name>
+	                <value>${analysisDataPreparationHdfsPath}</value>
+	            </property>
+	            <property>
+	                <name>analysisFcaMaxConceptHdfsPath</name>
+	                <value>${analysisFcaMaxConceptHdfsPath}</value>
+	            </property>	                                
+			</configuration>
+            <main-class>com.mgarciaroig.pfc.fca.analysis.action.formalconceptbuilding.InitialFormalConceptFileCreationAction</main-class>     
+            <capture-output />       
+        </java>
+        <ok to="fca-min-formal-concept-creation"/>
+        <error to="fail"/>
+    </action>
+    
+    <action name="fca-min-formal-concept-creation">    	
+        <java>   
+        	<prepare>               
+                <delete path="${analysisFcaMinConceptHdfsPath}" />
+                <mkdir path="${analysisFcaMinConceptHdfsPath}" />
+			</prepare>             	
+        	<configuration>
+				<property>
+	             	<name>etlHdfsFormalContextHdfsPath</name>
+	                <value>${etlHdfsFormalContextHdfsPath}</value>
+	            </property>
+	            <property>
+	                <name>analysisDataPreparationHdfsPath</name>
+	                <value>${analysisDataPreparationHdfsPath}</value>
+	            </property>
+	            <property>
+	                <name>analysisFcaMinConceptHdfsPath</name>
+	                <value>${analysisFcaMinConceptHdfsPath}</value>
+	            </property>	                                
+			</configuration>
+            <main-class>com.mgarciaroig.pfc.fca.analysis.action.formalconceptbuilding.MinimalFormalConceptCreationAction</main-class>     
+            <capture-output />       
+        </java>
+        <ok to="fca-iteratively-formal-concept-creation"/>
+        <error to="fail"/>
+    </action>
+    
+    <action name="fca-iteratively-formal-concept-creation">    	
+        <java>   
+        	<prepare>               
+                <delete path="${analysisFcaIterationsHdfsPath}" />
+                <mkdir path="${analysisFcaIterationsHdfsPath}" />
+			</prepare>             	
+        	<configuration>
+				<property>
+	             	<name>etlHdfsFormalContextHdfsPath</name>
+	                <value>${etlHdfsFormalContextHdfsPath}</value>
+	            </property>
+	            <property>
+	                <name>analysisDataPreparationHdfsPath</name>
+	                <value>${analysisDataPreparationHdfsPath}</value>
+	            </property>
+	            <property>
+	                <name>analysisFcaMaxConceptHdfsPath</name>
+	                <value>${analysisFcaMaxConceptHdfsPath}</value>
+	            </property>
+	            <property>
+	                <name>analysisFcaIterationsHdfsPath</name>
+	                <value>${analysisFcaIterationsHdfsPath}</value>
+	            </property>
+	            <property>
+	                <name>analysisFcaMaxIterations</name>
+	                <value>${analysisFcaMaxIterations}</value>
+	            </property>	            	            
+			</configuration>
+            <main-class>com.mgarciaroig.pfc.fca.analysis.action.formalconceptbuilding.IterativelyFormalConceptCreationAction</main-class>     
+            <capture-output />       
+        </java>
+        <ok to="end"/>
+        <error to="fail"/>
+    </action>
+        
+    <kill name="fail">
+        <message>Action failed, error message[${wf:errorMessage(wf:lastErrorNode())}]</message>
+    </kill>
+    <end name="end"/>
+</workflow-app>

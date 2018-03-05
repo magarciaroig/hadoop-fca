@@ -11,7 +11,7 @@ import org.apache.hadoop.mapreduce.lib.output.MultipleOutputs;
 
 /**
  * Reducer to collect all object id's by enabled attribute
- * @author Miguel �?ngel García Roig (mgarciaroig@uoc.edu)
+ * @author Miguel �?ngel García Roig (rocho08@gmail.com)
  *
  */
 public class FormalContextDataPrepareReducer extends

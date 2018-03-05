@@ -4,7 +4,7 @@ import java.io.IOException;
 
 /**
  * Base class to implement tools
- * @author Miguel Ángel García Roig (mgarciaroig@uoc.edu)
+ * @author Miguel Ángel García Roig (rocho08@gmail.com)
  *
  */
 abstract class Tool {

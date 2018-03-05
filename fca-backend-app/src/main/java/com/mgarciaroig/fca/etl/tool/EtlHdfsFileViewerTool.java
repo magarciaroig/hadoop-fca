@@ -17,7 +17,7 @@ import org.apache.hadoop.util.ReflectionUtils;
 
 /**
  * Tool to view sequence files from hdfs
- * @author Miguel Ángel García Roig (mgarciaroig@uoc.edu)
+ * @author Miguel Ángel García Roig (rocho08@gmail.com)
  *
  */
 public class EtlHdfsFileViewerTool extends Tool {

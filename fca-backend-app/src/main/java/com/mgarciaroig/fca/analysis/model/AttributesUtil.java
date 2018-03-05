@@ -6,7 +6,7 @@ import java.util.List;
 /**
  * Class in charge of performing generic attributes operations
  * 
- * @author Miguel Ángel García Roig (mgarciaroig@uoc.edu)
+ * @author Miguel Ángel García Roig (rocho08@gmail.com)
  *
  */
 public class AttributesUtil {

@@ -12,7 +12,7 @@ import org.apache.hadoop.util.ReflectionUtils;
 
 /**
  * Tool to visualize mahout clusterization output tools
- * @author Miguel Ángel García Roig (mgarciaroig@uoc.edu)
+ * @author Miguel Ángel García Roig (rocho08@gmail.com)
  *
  */
 public class MahoutClusteredPointsFileViewerTool extends Tool {

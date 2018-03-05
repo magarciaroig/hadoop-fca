@@ -12,7 +12,7 @@ import com.mgarciaroig.pfc.fca.analysis.model.FormalContextItem;
 
 /**
  * Utility class to build a concept item from serialization types 
- * @author Miguel Ángel García Roig (mgarciaroig@uoc.edu)
+ * @author Miguel Ángel García Roig (rocho08@gmail.com)
  *
  */
 public class FormalContextItemBuilder {

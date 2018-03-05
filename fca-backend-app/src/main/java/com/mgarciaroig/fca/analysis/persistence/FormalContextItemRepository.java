@@ -22,7 +22,7 @@ import org.apache.hadoop.util.ReflectionUtils;
 
 /**
  * Repository class to load the formal context items from serialization
- * @author Miguel Ángel García Roig (mgarciaroig@uoc.edu)
+ * @author Miguel Ángel García Roig (rocho08@gmail.com)
  *
  */
 public class FormalContextItemRepository {

@@ -10,7 +10,7 @@ import com.mgarciaroig.pfc.fca.framework.oozie.BaseAction;
 
 /**
  * Base class to implement both Canopy and Kmeans clusterization 
- * @author Miguel Ángel García Roig (mgarciaroig@uoc.edu)
+ * @author Miguel Ángel García Roig (rocho08@gmail.com)
  *
  */
 public abstract class ClusterizationBaseAction extends BaseAction {

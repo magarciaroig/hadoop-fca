@@ -15,7 +15,7 @@ import com.mgarciaroig.pfc.fca.framework.oozie.BaseAction;
 /**
  * Java action to be called from oozie. It imports the IAEA reactors file and puts it inside the HDFS cluster
  * 
- * @author Miguel Ángel García Roig (mgarciaroig@uoc.edu)
+ * @author Miguel Ángel García Roig (rocho08@gmail.com)
  *
  */
 public class IAEADataRetrieverAction extends BaseAction {

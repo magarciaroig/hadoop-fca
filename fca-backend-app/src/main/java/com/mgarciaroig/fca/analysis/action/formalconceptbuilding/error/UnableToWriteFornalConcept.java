@@ -4,7 +4,7 @@ import com.mgarciaroig.pfc.fca.framework.error.FCAAnalizerException;
 
 /**
  * Class to modelize writing formal concepts errors 
- * @author Miguel �?ngel García Roig (mgarciaroig@uoc.edu)
+ * @author Miguel �?ngel García Roig (rocho08@gmail.com)
  *
  */
 public class UnableToWriteFornalConcept extends FCAAnalizerException {

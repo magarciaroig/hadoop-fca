@@ -9,7 +9,7 @@ import com.mgarciaroig.pfc.fca.framework.error.ReactorsFCAAnalizerException;
 /**
  * Modelizes an error importing remote reactors file 
  * 
- * @author Miguel Ángel García Roig (mgarciaroig@uoc.edu)
+ * @author Miguel Ángel García Roig (rocho08@gmail.com)
  *
  */
 public class UnableToRetrieveInputDataReactorsFromIAEAException extends

@@ -19,7 +19,7 @@ import com.mgarciaroig.pfc.fca.analysis.persistence.FormalContextItemRepository;
 /**
  * Class to modelize a FCA formal concept
  *  
- * @author Miguel Ángel García Roig (mgarciaroig@uoc.edu)
+ * @author Miguel Ángel García Roig (rocho08@gmail.com)
  *
  */
 public class FormalConcept extends IntentManager implements Writable  {

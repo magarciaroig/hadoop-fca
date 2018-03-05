@@ -2,7 +2,7 @@ package com.mgarciaroig.fca.export.action;
 
 /**
  * Class modeling an error exporting generated formal concepts data from hadoop cluster to database
- * @author Miguel Ángel García Roig (mgarciaroig@uoc.edu)
+ * @author Miguel Ángel García Roig (rocho08@gmail.com)
  *
  */
 public class ExportFormalConceptsException extends ExportException {

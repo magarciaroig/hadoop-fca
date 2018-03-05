@@ -3,7 +3,7 @@ package com.mgarciaroig.fca.framework.error;
 /**
  * Higher application error abstraction
  * 
- * @author Miguel Ángel García Roig (mgarciaroig@uoc.edu)
+ * @author Miguel Ángel García Roig (rocho08@gmail.com)
  *
  */
 public class ReactorsFCAAnalizerException extends FCAAnalizerException {

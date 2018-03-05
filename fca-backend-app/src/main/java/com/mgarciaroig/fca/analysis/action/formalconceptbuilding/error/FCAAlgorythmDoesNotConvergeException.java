@@ -4,7 +4,7 @@ import com.mgarciaroig.pfc.fca.framework.error.FCAAnalizerException;
 
 /**
  * Error modeling an error produced when, after the max allowed iterations has been reached, all formal concepts has not been computed yet
- * @author Miguel �?ngel García Roig (mgarciaroig@uoc.edu)
+ * @author Miguel �?ngel García Roig (rocho08@gmail.com)
  *
  */
 public class FCAAlgorythmDoesNotConvergeException extends FCAAnalizerException {

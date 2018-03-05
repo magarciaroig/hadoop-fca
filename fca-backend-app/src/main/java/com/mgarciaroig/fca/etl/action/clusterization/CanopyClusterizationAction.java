@@ -17,7 +17,7 @@ import com.mgarciaroig.pfc.fca.etl.action.dataprepare.Field;
 
 /**
  * Canopy mahout clusterization action
- * @author Miguel Ángel García Roig (mgarciaroig@uoc.edu)
+ * @author Miguel Ángel García Roig (rocho08@gmail.com)
  *
  */
 public class CanopyClusterizationAction extends ClusterizationBaseAction {

@@ -16,7 +16,7 @@ import org.apache.hadoop.mapreduce.Mapper;
 
 /**
  * Hadoop mapper to enumerate distinct values for enumarable fields
- * @author Miguel Ángel García Roig (mgarciaroig@uoc.edu)
+ * @author Miguel Ángel García Roig (rocho08@gmail.com)
  *
  */
 public class EnumeratorMapper extends

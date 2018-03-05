@@ -9,7 +9,7 @@ import java.util.TreeMap;
 
 /**
  * Class to represent each object to be analyzed in the formal context
- * @author Miguel Ángel García Roig (mgarciaroig@uoc.edu)
+ * @author Miguel Ángel García Roig (rocho08@gmail.com)
  *
  */
 public class FormalContextItem {

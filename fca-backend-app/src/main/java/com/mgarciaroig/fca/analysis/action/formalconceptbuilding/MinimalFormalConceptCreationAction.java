@@ -14,7 +14,7 @@ import com.mgarciaroig.pfc.fca.framework.error.FCAAnalizerException;
 /**
  * Action to create the data corresponding to the minimal node in the concept lattice graph. We need to generate it explicitly because
  * of is is not being computed in the fca algorythm
- * @author Miguel �?ngel García Roig (mgarciaroig@uoc.edu)
+ * @author Miguel �?ngel García Roig (rocho08@gmail.com)
  *
  */
 public class MinimalFormalConceptCreationAction extends FormalConceptFileCreationBase {

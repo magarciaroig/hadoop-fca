@@ -29,7 +29,7 @@ import org.apache.hadoop.util.ReflectionUtils;
 
 /**
  * Action to export all object and fields data from hadoop cluster to database
- * @author Miguel Ángel García Roig (mgarciaroig@uoc.edu)
+ * @author Miguel Ángel García Roig (rocho08@gmail.com)
  *
  */
 public class ExportObjectsAction extends DatabaseExportActionBase {

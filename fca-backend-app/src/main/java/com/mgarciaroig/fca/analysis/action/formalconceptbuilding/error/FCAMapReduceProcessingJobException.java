@@ -4,7 +4,7 @@ import com.mgarciaroig.pfc.fca.framework.error.FCAAnalizerException;
 
 /**
  * Exception modeling an error produced during an fca map-reducer job execution
- * @author Miguel �?ngel García Roig (mgarciaroig@uoc.edu)
+ * @author Miguel �?ngel García Roig (rocho08@gmail.com)
  *
  */
 public class FCAMapReduceProcessingJobException extends FCAAnalizerException {

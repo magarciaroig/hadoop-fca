@@ -8,7 +8,7 @@ import com.mgarciaroig.pfc.fca.etl.action.dataprepare.Field;
 
 /**
  * Classifies fields in function of the required codification strategy for its values
- * @author Miguel Ángel García Roig (mgarciaroig@uoc.edu)
+ * @author Miguel Ángel García Roig (rocho08@gmail.com)
  *
  */
 public class DiscretizationClassifier {

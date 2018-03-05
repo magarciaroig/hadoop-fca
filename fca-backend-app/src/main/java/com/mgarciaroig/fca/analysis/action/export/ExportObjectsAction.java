@@ -34,7 +34,7 @@ import com.mgarciaroig.pfc.fca.framework.oozie.BaseAction;
 
 /**
  * Action to export all object and attributes data from hadoop cluster to database
- * @author Miguel �?ngel García Roig (mgarciaroig@uoc.edu)
+ * @author Miguel �?ngel García Roig (rocho08@gmail.com)
  *
  */
 public class ExportObjectsAction extends BaseAction {

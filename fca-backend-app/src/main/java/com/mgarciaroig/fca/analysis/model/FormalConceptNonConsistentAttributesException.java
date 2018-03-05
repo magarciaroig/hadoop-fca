@@ -6,7 +6,7 @@ import com.mgarciaroig.pfc.fca.framework.error.FCAAnalizerException;
 
 /**
  * Class that modelizes an error trying to construct a new formal context; but passing one or more attributes not shared by all of the objects
- * @author Miguel Ángel García Roig (mgarciaroig@uoc.edu)
+ * @author Miguel Ángel García Roig (rocho08@gmail.com)
  *
  */
 public class FormalConceptNonConsistentAttributesException extends FCAAnalizerException {

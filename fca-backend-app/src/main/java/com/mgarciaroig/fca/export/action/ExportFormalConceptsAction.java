@@ -18,7 +18,7 @@ import com.mgarciaroig.pfc.fca.framework.error.FCAAnalizerException;
 
 /**
  * Action to export all formal concepts and attributes data from hadoop cluster to database
- * @author Miguel Ángel García Roig (mgarciaroig@uoc.edu)
+ * @author Miguel Ángel García Roig (rocho08@gmail.com)
  *
  */
 public class ExportFormalConceptsAction extends DatabaseExportActionBase {

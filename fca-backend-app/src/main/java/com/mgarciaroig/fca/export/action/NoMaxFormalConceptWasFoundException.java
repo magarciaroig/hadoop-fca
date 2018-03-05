@@ -2,7 +2,7 @@ package com.mgarciaroig.fca.export.action;
 
 /**
  * Class modeling an error when no max formal concept is found in the database
- * @author Miguel Ángel García Roig (mgarciaroig@uoc.edu)
+ * @author Miguel Ángel García Roig (rocho08@gmail.com)
  *
  */
 public class NoMaxFormalConceptWasFoundException extends BuildConceptLatticeGraphException {

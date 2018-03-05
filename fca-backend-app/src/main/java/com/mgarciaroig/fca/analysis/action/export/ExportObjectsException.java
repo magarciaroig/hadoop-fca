@@ -2,7 +2,7 @@ package com.mgarciaroig.fca.analysis.action.export;
 
 /**
  * Class modeling an error exporting generated objects data from hadoop cluster to database
- * @author Miguel �?ngel García Roig (mgarciaroig@uoc.edu)
+ * @author Miguel �?ngel García Roig (rocho08@gmail.com)
  *
  */
 public class ExportObjectsException extends ExportException {

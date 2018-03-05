@@ -5,7 +5,7 @@ import com.mgarciaroig.pfc.fca.framework.error.ReactorsFCAAnalizerException;
 /**
  * Class modelizing an error importing IAEA data file from remote location 
  * 
- * @author Miguel Ángel García Roig (mgarciaroig@uoc.edu)
+ * @author Miguel Ángel García Roig (rocho08@gmail.com)
  *
  */
 public class BadIAEADateImportUrlException extends ReactorsFCAAnalizerException {

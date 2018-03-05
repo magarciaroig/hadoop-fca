@@ -20,7 +20,7 @@ import com.mgarciaroig.pfc.fca.framework.oozie.BaseAction;
 
 /**
  * Action to iteratively launch map-reduce actions until all formal concepts become generated
- * @author Miguel �?ngel García Roig (mgarciaroig@uoc.edu)
+ * @author Miguel �?ngel García Roig (rocho08@gmail.com)
  *
  */
 public class IterativelyFormalConceptCreationAction extends BaseAction {

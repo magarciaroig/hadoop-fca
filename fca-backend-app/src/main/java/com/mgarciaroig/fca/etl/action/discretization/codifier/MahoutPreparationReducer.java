@@ -20,7 +20,7 @@ import org.apache.mahout.math.VectorWritable;
 
 /**
  * Reducer to collect all the mahout clusteriable values for a given field, and generate a valid mahout input file
- * @author Miguel Ángel García Roig (mgarciaroig@uoc.edu)
+ * @author Miguel Ángel García Roig (rocho08@gmail.com)
  *
  */
 public class MahoutPreparationReducer extends Reducer<Text,DoubleWritable,NullWritable,VectorWritable>{

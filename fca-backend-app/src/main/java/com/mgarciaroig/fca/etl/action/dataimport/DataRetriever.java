@@ -13,7 +13,7 @@ import org.apache.hadoop.fs.Path;
 /**
  * Class responsible for importing the remote data file into HDFS cluster
  * 
- * @author Miguel Ángel García Roig (mgarciaroig@uoc.edu)
+ * @author Miguel Ángel García Roig (rocho08@gmail.com)
  *
  */
 class DataRetriever {

@@ -25,7 +25,7 @@ import com.mgarciaroig.pfc.fca.etl.action.discretization.DiscretizationType;
 
 /**
  * Mapper to codify the values for enumerable fields
- * @author Miguel Ángel García Roig (mgarciaroig@uoc.edu)
+ * @author Miguel Ángel García Roig (rocho08@gmail.com)
  *
  */
 public class DiscretizationCodifierMapper extends Mapper<NullWritable, SortedMapWritable, NullWritable, SortedMapWritable>{

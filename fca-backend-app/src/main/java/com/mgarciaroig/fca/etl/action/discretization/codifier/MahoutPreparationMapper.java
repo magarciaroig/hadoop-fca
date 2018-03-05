@@ -18,7 +18,7 @@ import com.mgarciaroig.pfc.fca.etl.action.discretization.DiscretizationType;
 
 /**
  * Mapper to emit all mahout clusterizable values. with the name of the field as a key
- * @author Miguel Ángel García Roig (mgarciaroig@uoc.edu)
+ * @author Miguel Ángel García Roig (rocho08@gmail.com)
  *
  */
 public class MahoutPreparationMapper extends Mapper<NullWritable,SortedMapWritable,Text,DoubleWritable>{

@@ -17,7 +17,7 @@ import com.mgarciaroig.pfc.fca.analysis.persistence.FormalContextItemRepository;
 
 /**
  * Mapper in charge of generating derived formal concepts
- * @author Miguel �?ngel García Roig (mgarciaroig@uoc.edu)
+ * @author Miguel �?ngel García Roig (rocho08@gmail.com)
  *
  */
 public class FormalConceptBuildingMapper extends Mapper<FormalConceptBuildingKey,FormalConcept,FormalConceptBuildingKey,FormalConcept> {

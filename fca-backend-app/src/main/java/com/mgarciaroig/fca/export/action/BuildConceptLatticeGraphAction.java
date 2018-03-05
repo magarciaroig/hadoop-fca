@@ -24,7 +24,7 @@ import com.mgarciaroig.pfc.fca.analysis.model.FormalConcept;
 
 /**
  * Action to build the concept lattice hierarchy over the exported formal concepts in the database
- * @author Miguel Ángel García Roig (mgarciaroig@uoc.edu)
+ * @author Miguel Ángel García Roig (rocho08@gmail.com)
  *
  */
 public class BuildConceptLatticeGraphAction extends DatabaseExportActionBase {

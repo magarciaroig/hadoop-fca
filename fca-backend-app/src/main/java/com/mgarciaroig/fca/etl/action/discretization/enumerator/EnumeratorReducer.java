@@ -11,7 +11,7 @@ import org.apache.log4j.Logger;
 
 /**
  * Hadoop reduce to enumerate distinct values for enumarable fields
- * @author Miguel Ángel García Roig (mgarciaroig@uoc.edu)
+ * @author Miguel Ángel García Roig (rocho08@gmail.com)
  *
  */
 public class EnumeratorReducer extends

@@ -4,7 +4,7 @@ import java.util.LinkedHashMap;
 
 /**
  * Haspmap that stores maxSize elements as much
- * @author Miguel Ángel García Roig (mgarciaroig@uoc.edu)
+ * @author Miguel Ángel García Roig (rocho08@gmail.com)
  *
  * @param <K>
  * @param <V>

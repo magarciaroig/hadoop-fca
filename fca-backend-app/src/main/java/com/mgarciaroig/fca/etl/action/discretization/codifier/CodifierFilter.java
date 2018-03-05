@@ -9,7 +9,7 @@ import com.mgarciaroig.pfc.fca.etl.action.dataprepare.Field;
 
 /**
  * Class to filter and obtain required codification strategy for each field type
- * @author Miguel Ángel García Roig (mgarciaroig@uoc.edu)
+ * @author Miguel Ángel García Roig (rocho08@gmail.com)
  *
  */
 public class CodifierFilter {

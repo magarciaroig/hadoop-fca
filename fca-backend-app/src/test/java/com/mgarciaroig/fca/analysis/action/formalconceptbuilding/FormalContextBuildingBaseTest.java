@@ -27,7 +27,7 @@ import com.mgarciaroig.pfc.fca.analysis.persistence.FormalContextItemRepository;
  * Convenience utilities to implement map-reduce formal concept tests. I'm following the examples (with inputs and expected outputs) provided by Petr Krajca and Vilem Vychodil
  * in the paper "Distributed Algorithm for Computing Formal Concepts Using Map-Reduce Framework"
  *   
- * @author Miguel Ángel García Roig (mgarciaroig@uoc.edu)
+ * @author Miguel Ángel García Roig (rocho08@gmail.com)
  *
  */
 public class FormalContextBuildingBaseTest {

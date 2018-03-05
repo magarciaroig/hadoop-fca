@@ -13,7 +13,7 @@ import org.apache.mahout.math.VectorWritable;
 
 /**
  * Tool to visualize mahout clusterization input files
- * @author Miguel Ángel García Roig (mgarciaroig@uoc.edu)
+ * @author Miguel Ángel García Roig (rocho08@gmail.com)
  *
  */
 public class MahoutInputFileViewerTool extends Tool {

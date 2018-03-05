@@ -14,7 +14,7 @@ import com.mgarciaroig.pfc.fca.framework.error.FCAAnalizerException;
 
 /**
  * Action to create the initial data for fca computation. Initial data corresponds to the maximum node in the concept lattice graph
- * @author Miguel �?ngel García Roig (mgarciaroig@uoc.edu)
+ * @author Miguel �?ngel García Roig (rocho08@gmail.com)
  *
  */
 public class InitialFormalConceptFileCreationAction extends FormalConceptFileCreationBase {

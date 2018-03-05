@@ -2,7 +2,7 @@ package com.mgarciaroig.fca.framework.error;
 
 /**
  * Base class for exceptions
- * @author Miguel Ángel García Roig (mgarciaroig@uoc.edu)
+ * @author Miguel Ángel García Roig (rocho08@gmail.com)
  *
  */
 public class FCAAnalizerException extends Exception {

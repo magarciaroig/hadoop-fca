@@ -8,7 +8,7 @@ import org.apache.hadoop.mapreduce.Reducer;
 
 /**
  * Reducer to merge all generated formal concept in a single sequence file
- * @author Miguel Ángel García Roig (mgarciaroig@uoc.edu)
+ * @author Miguel Ángel García Roig (rocho08@gmail.com)
  *
  */
 public class MergeFormalConceptsReducer extends Reducer<NullWritable, FormalConcept, NullWritable, FormalConcept> {

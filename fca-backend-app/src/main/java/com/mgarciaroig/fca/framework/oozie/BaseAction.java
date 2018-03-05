@@ -9,7 +9,7 @@ import org.apache.hadoop.fs.Path;
 
 /**
  * Base class for all oozie actions
- * @author Miguel Ángel García Roig (mgarciaroig@uoc.edu)
+ * @author Miguel Ángel García Roig (rocho08@gmail.com)
  *
  */
 public abstract class BaseAction {

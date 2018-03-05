@@ -12,7 +12,7 @@ import com.mgarciaroig.pfc.fca.framework.error.ReactorsFCAAnalizerException;
 
 /**
  * Kmeans mahout clusterization action
- * @author Miguel Ángel García Roig (mgarciaroig@uoc.edu)
+ * @author Miguel Ángel García Roig (rocho08@gmail.com)
  *
  */
 public class KmeansClusterizationAction extends ClusterizationBaseAction {

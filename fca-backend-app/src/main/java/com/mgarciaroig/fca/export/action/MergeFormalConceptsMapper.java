@@ -10,7 +10,7 @@ import com.mgarciaroig.pfc.fca.analysis.model.FormalConceptBuildingKey;
 
 /**
  * Mapper to merge all generated formal concept in a single sequence file
- * @author Miguel Ángel García Roig (mgarciaroig@uoc.edu)
+ * @author Miguel Ángel García Roig (rocho08@gmail.com)
  *
  */
 public class MergeFormalConceptsMapper extends Mapper<FormalConceptBuildingKey, FormalConcept, NullWritable, FormalConcept> {

@@ -12,7 +12,7 @@ import com.mgarciaroig.pfc.fca.framework.oozie.BaseAction;
 
 /**
  * Base class with utility methods to implement database export actions
- * @author Miguel Ángel García Roig (mgarciaroig@uoc.edu)
+ * @author Miguel Ángel García Roig (rocho08@gmail.com)
  *
  */
 abstract class DatabaseExportActionBase extends BaseAction {

@@ -2,7 +2,7 @@ package com.mgarciaroig.fca.framework.oozie;
 
 import java.io.IOException;
 
-import com.mgarciaroig.pfc.fca.framework.error.FCAAnalizerException;
+import com.mgarciaroig.fca.framework.error.FCAAnalizerException;
 import org.apache.hadoop.conf.Configuration;
 import org.apache.hadoop.fs.FileSystem;
 import org.apache.hadoop.fs.Path;

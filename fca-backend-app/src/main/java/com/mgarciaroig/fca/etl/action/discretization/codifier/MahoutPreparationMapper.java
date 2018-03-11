@@ -13,8 +13,8 @@ import org.apache.hadoop.io.WritableComparable;
 import org.apache.hadoop.mapreduce.Mapper;
 import org.apache.log4j.Logger;
 
-import com.mgarciaroig.pfc.fca.etl.action.dataprepare.Field;
-import com.mgarciaroig.pfc.fca.etl.action.discretization.DiscretizationType;
+import com.mgarciaroig.fca.etl.action.dataprepare.Field;
+import com.mgarciaroig.fca.etl.action.discretization.DiscretizationType;
 
 /**
  * Mapper to emit all mahout clusterizable values. with the name of the field as a key

@@ -2,11 +2,11 @@ package com.mgarciaroig.fca.etl.action.clusterization;
 
 import java.io.IOException;
 
-import com.mgarciaroig.pfc.fca.etl.action.dataprepare.Field;
-import com.mgarciaroig.pfc.fca.etl.action.discretization.DiscretizationType;
-import com.mgarciaroig.pfc.fca.etl.action.discretization.codifier.CodifierFilter;
-import com.mgarciaroig.pfc.fca.framework.error.ReactorsFCAAnalizerException;
-import com.mgarciaroig.pfc.fca.framework.oozie.BaseAction;
+import com.mgarciaroig.fca.etl.action.dataprepare.Field;
+import com.mgarciaroig.fca.etl.action.discretization.DiscretizationType;
+import com.mgarciaroig.fca.etl.action.discretization.codifier.CodifierFilter;
+import com.mgarciaroig.fca.framework.error.ReactorsFCAAnalizerException;
+import com.mgarciaroig.fca.framework.oozie.BaseAction;
 
 /**
  * Base class to implement both Canopy and Kmeans clusterization 

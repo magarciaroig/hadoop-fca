@@ -16,11 +16,11 @@ import java.util.Map.Entry;
 import java.util.Set;
 import java.util.TreeSet;
 
-import com.mgarciaroig.pfc.fca.framework.error.FCAAnalizerException;
+import com.mgarciaroig.fca.framework.error.FCAAnalizerException;
 import org.apache.commons.lang.StringUtils;
 import org.apache.hadoop.conf.Configuration;
 
-import com.mgarciaroig.pfc.fca.analysis.model.FormalConcept;
+import com.mgarciaroig.fca.analysis.model.FormalConcept;
 
 /**
  * Action to build the concept lattice hierarchy over the exported formal concepts in the database

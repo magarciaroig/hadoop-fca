@@ -9,8 +9,8 @@ import org.apache.hadoop.fs.Path;
 import org.apache.log4j.Logger;
 //import org.apache.log4j.Logger;
 
-import com.mgarciaroig.pfc.fca.framework.error.ReactorsFCAAnalizerException;
-import com.mgarciaroig.pfc.fca.framework.oozie.BaseAction;
+import com.mgarciaroig.fca.framework.error.ReactorsFCAAnalizerException;
+import com.mgarciaroig.fca.framework.oozie.BaseAction;
 
 /**
  * Java action to be called from oozie. It imports the IAEA reactors file and puts it inside the HDFS cluster

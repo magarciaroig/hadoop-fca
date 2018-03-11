@@ -3,7 +3,7 @@ package com.mgarciaroig.fca.etl.action.dataconvert.transform;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-import com.mgarciaroig.pfc.fca.etl.action.dataconvert.FieldType;
+import com.mgarciaroig.fca.etl.action.dataconvert.FieldType;
 
 abstract class BaseRegexTransformer implements Transformer {
 	

@@ -14,7 +14,7 @@ import org.apache.commons.lang.StringUtils;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.hadoop.io.Writable;
 
-import com.mgarciaroig.pfc.fca.analysis.persistence.FormalContextItemRepository;
+import com.mgarciaroig.fca.analysis.persistence.FormalContextItemRepository;
 
 /**
  * Class to modelize a FCA formal concept

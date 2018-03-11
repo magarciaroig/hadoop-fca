@@ -6,11 +6,11 @@ import java.util.TreeSet;
 
 import org.apache.hadoop.fs.Path;
 
-import com.mgarciaroig.pfc.fca.analysis.action.formalconceptbuilding.error.UnableToReadFormalContext;
+import com.mgarciaroig.fca.analysis.action.formalconceptbuilding.error.UnableToReadFormalContext;
 
-import com.mgarciaroig.pfc.fca.analysis.model.FormalConcept;
-import com.mgarciaroig.pfc.fca.analysis.model.FormalConceptBuildingKey;
-import com.mgarciaroig.pfc.fca.framework.error.FCAAnalizerException;
+import com.mgarciaroig.fca.analysis.model.FormalConcept;
+import com.mgarciaroig.fca.analysis.model.FormalConceptBuildingKey;
+import com.mgarciaroig.fca.framework.error.FCAAnalizerException;
 
 /**
  * Action to create the initial data for fca computation. Initial data corresponds to the maximum node in the concept lattice graph

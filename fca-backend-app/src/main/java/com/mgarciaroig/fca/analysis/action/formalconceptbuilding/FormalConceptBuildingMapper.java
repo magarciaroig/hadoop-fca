@@ -9,11 +9,11 @@ import org.apache.hadoop.mapreduce.Mapper;
 
 import com.google.common.base.Throwables;
 
-import com.mgarciaroig.pfc.fca.analysis.model.AttributesUtil;
-import com.mgarciaroig.pfc.fca.analysis.model.FormalConcept;
-import com.mgarciaroig.pfc.fca.analysis.model.FormalConceptBuildingKey;
-import com.mgarciaroig.pfc.fca.analysis.model.FormalConceptNonConsistentAttributesException;
-import com.mgarciaroig.pfc.fca.analysis.persistence.FormalContextItemRepository;
+import com.mgarciaroig.fca.analysis.model.AttributesUtil;
+import com.mgarciaroig.fca.analysis.model.FormalConcept;
+import com.mgarciaroig.fca.analysis.model.FormalConceptBuildingKey;
+import com.mgarciaroig.fca.analysis.model.FormalConceptNonConsistentAttributesException;
+import com.mgarciaroig.fca.analysis.persistence.FormalContextItemRepository;
 
 /**
  * Mapper in charge of generating derived formal concepts

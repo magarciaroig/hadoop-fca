@@ -4,7 +4,7 @@ import java.io.IOException;
 import java.text.NumberFormat;
 import java.util.TreeMap;
 
-import com.mgarciaroig.pfc.fca.etl.action.dataprepare.Field;
+import com.mgarciaroig.fca.etl.action.dataprepare.Field;
 import org.apache.hadoop.io.BooleanWritable;
 import org.apache.hadoop.io.Text;
 import org.apache.hadoop.io.Writable;

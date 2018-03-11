@@ -8,7 +8,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 
-import com.mgarciaroig.pfc.fca.framework.oozie.BaseAction;
+import com.mgarciaroig.fca.framework.oozie.BaseAction;
 
 /**
  * Base class with utility methods to implement database export actions

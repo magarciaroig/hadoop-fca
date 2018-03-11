@@ -3,7 +3,7 @@ package com.mgarciaroig.fca.analysis.action.formalconceptbuilding;
 import org.apache.hadoop.conf.Configuration;
 import org.apache.hadoop.fs.FileSystem;
 import org.apache.hadoop.fs.Path;
-import com.mgarciaroig.pfc.fca.analysis.persistence.FormalContextItemRepository;
+import com.mgarciaroig.fca.analysis.persistence.FormalContextItemRepository;
 
 class RepositoryBuilder {
 		

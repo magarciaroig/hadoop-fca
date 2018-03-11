@@ -1,6 +1,6 @@
 package com.mgarciaroig.fca.export.action;
 
-import com.mgarciaroig.pfc.fca.framework.error.FCAAnalizerException;
+import com.mgarciaroig.fca.framework.error.FCAAnalizerException;
 
 /**
  * Class modeling an error building the concept lattice graph over the database formal concepts

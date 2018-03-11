@@ -7,8 +7,8 @@ import java.util.List;
 import org.apache.mahout.clustering.kmeans.KMeansDriver;
 import org.apache.mahout.common.distance.EuclideanDistanceMeasure;
 
-import com.mgarciaroig.pfc.fca.etl.action.dataprepare.Field;
-import com.mgarciaroig.pfc.fca.framework.error.ReactorsFCAAnalizerException;
+import com.mgarciaroig.fca.etl.action.dataprepare.Field;
+import com.mgarciaroig.fca.framework.error.ReactorsFCAAnalizerException;
 
 /**
  * Kmeans mahout clusterization action

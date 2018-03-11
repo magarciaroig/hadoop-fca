@@ -7,9 +7,9 @@ import org.apache.hadoop.fs.FileSystem;
 import org.apache.hadoop.mapreduce.Counter;
 import org.apache.hadoop.mapreduce.Reducer;
 
-import com.mgarciaroig.pfc.fca.analysis.model.AttributesUtil;
-import com.mgarciaroig.pfc.fca.analysis.model.FormalConcept;
-import com.mgarciaroig.pfc.fca.analysis.model.FormalConceptBuildingKey;
+import com.mgarciaroig.fca.analysis.model.AttributesUtil;
+import com.mgarciaroig.fca.analysis.model.FormalConcept;
+import com.mgarciaroig.fca.analysis.model.FormalConceptBuildingKey;
 
 public class FormalConceptBuildingReducer extends Reducer<FormalConceptBuildingKey,FormalConcept,FormalConceptBuildingKey,FormalConcept> {
 	

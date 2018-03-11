@@ -13,8 +13,8 @@ import org.apache.poi.hssf.usermodel.HSSFWorkbook;
 import org.apache.poi.ss.usermodel.Sheet;
 import org.apache.poi.ss.usermodel.Workbook;
 
-import com.mgarciaroig.pfc.fca.framework.error.ReactorsFCAAnalizerException;
-import com.mgarciaroig.pfc.fca.framework.oozie.BaseAction;
+import com.mgarciaroig.fca.framework.error.ReactorsFCAAnalizerException;
+import com.mgarciaroig.fca.framework.oozie.BaseAction;
 
 public class IAEADataPrepareAction extends BaseAction {
 			

@@ -16,7 +16,7 @@ import static org.mockito.Matchers.any;
 
 import org.junit.Test;
 
-import com.mgarciaroig.pfc.fca.analysis.persistence.FormalContextItemRepository;
+import com.mgarciaroig.fca.analysis.persistence.FormalContextItemRepository;
 
 public class FormalConceptTest {
 	

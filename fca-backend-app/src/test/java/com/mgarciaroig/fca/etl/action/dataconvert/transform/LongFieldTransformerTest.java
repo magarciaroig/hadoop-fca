@@ -3,7 +3,7 @@ package com.mgarciaroig.fca.etl.action.dataconvert.transform;
 import static org.junit.Assert.*;
 
 import org.junit.Test;
-import com.mgarciaroig.pfc.fca.etl.action.dataconvert.FieldType;
+import com.mgarciaroig.fca.etl.action.dataconvert.FieldType;
 
 public class LongFieldTransformerTest {
 	

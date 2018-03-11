@@ -2,7 +2,7 @@ package com.mgarciaroig.fca.etl.action.clusterization;
 
 import java.io.IOException;
 
-import com.mgarciaroig.pfc.fca.framework.error.ReactorsFCAAnalizerException;
+import com.mgarciaroig.fca.framework.error.ReactorsFCAAnalizerException;
 import org.apache.hadoop.fs.Path;
 import org.apache.hadoop.io.NullWritable;
 import org.apache.hadoop.io.SequenceFile;
@@ -13,7 +13,7 @@ import org.apache.mahout.common.distance.DistanceMeasure;
 import org.apache.mahout.common.distance.EuclideanDistanceMeasure;
 import org.apache.mahout.math.Vector;
 import org.apache.mahout.math.VectorWritable;
-import com.mgarciaroig.pfc.fca.etl.action.dataprepare.Field;
+import com.mgarciaroig.fca.etl.action.dataprepare.Field;
 
 /**
  * Canopy mahout clusterization action

@@ -1,6 +1,6 @@
 package com.mgarciaroig.fca.analysis.action.formalconceptbuilding.error;
 
-import com.mgarciaroig.pfc.fca.framework.error.FCAAnalizerException;
+import com.mgarciaroig.fca.framework.error.FCAAnalizerException;
 
 /**
  * Error modeling an error produced when, after the max allowed iterations has been reached, all formal concepts has not been computed yet

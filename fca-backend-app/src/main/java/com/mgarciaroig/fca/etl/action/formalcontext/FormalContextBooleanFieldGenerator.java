@@ -6,7 +6,7 @@ import org.apache.hadoop.io.BooleanWritable;
 import org.apache.hadoop.io.Text;
 import org.apache.hadoop.io.Writable;
 
-import com.mgarciaroig.pfc.fca.etl.action.dataprepare.Field;
+import com.mgarciaroig.fca.etl.action.dataprepare.Field;
 
 public class FormalContextBooleanFieldGenerator extends FormalContextFieldGeneratorBase {
 	

@@ -6,7 +6,7 @@ import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 
-import com.mgarciaroig.pfc.fca.util.MaxSizedHashMap;
+import com.mgarciaroig.fca.util.MaxSizedHashMap;
 import org.apache.mahout.math.Vector;
 import org.apache.hadoop.fs.FileSystem;
 import org.apache.hadoop.fs.Path;

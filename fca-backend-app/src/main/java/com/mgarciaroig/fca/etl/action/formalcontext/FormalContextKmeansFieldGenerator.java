@@ -3,7 +3,7 @@ package com.mgarciaroig.fca.etl.action.formalcontext;
 import java.io.IOException;
 import java.util.TreeMap;
 
-import com.mgarciaroig.pfc.fca.etl.action.dataprepare.Field;
+import com.mgarciaroig.fca.etl.action.dataprepare.Field;
 import org.apache.hadoop.fs.FileSystem;
 import org.apache.hadoop.fs.Path;
 import org.apache.hadoop.io.BooleanWritable;

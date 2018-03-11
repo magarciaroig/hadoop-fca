@@ -1,6 +1,6 @@
 package com.mgarciaroig.fca.analysis.action.formalconceptbuilding.error;
 
-import com.mgarciaroig.pfc.fca.framework.error.FCAAnalizerException;
+import com.mgarciaroig.fca.framework.error.FCAAnalizerException;
 
 /**
  * Exception modeling an error produced during an fca map-reducer job execution

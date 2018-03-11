@@ -3,7 +3,7 @@ package com.mgarciaroig.fca.etl.action.dataconvert.transform;
 import java.util.HashMap;
 import java.util.Map;
 
-import com.mgarciaroig.pfc.fca.etl.action.dataconvert.FieldType;
+import com.mgarciaroig.fca.etl.action.dataconvert.FieldType;
 
 public class FieldTransformer implements Transformer {
 		

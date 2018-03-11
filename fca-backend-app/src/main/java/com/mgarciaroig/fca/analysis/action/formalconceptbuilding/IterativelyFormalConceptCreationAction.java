@@ -9,14 +9,14 @@ import org.apache.hadoop.mapreduce.lib.input.SequenceFileInputFormat;
 import org.apache.hadoop.mapreduce.lib.output.SequenceFileOutputFormat;
 import org.apache.log4j.Logger;
 
-import com.mgarciaroig.pfc.fca.analysis.action.formalconceptbuilding.error.FCAAlgorythmDoesNotConvergeException;
-import com.mgarciaroig.pfc.fca.analysis.action.formalconceptbuilding.error.FCAFilesCreationException;
-import com.mgarciaroig.pfc.fca.analysis.action.formalconceptbuilding.error.FCAMapReduceProcessingJobException;
+import com.mgarciaroig.fca.analysis.action.formalconceptbuilding.error.FCAAlgorythmDoesNotConvergeException;
+import com.mgarciaroig.fca.analysis.action.formalconceptbuilding.error.FCAFilesCreationException;
+import com.mgarciaroig.fca.analysis.action.formalconceptbuilding.error.FCAMapReduceProcessingJobException;
 
-import com.mgarciaroig.pfc.fca.analysis.model.FormalConcept;
-import com.mgarciaroig.pfc.fca.analysis.model.FormalConceptBuildingKey;
-import com.mgarciaroig.pfc.fca.framework.error.FCAAnalizerException;
-import com.mgarciaroig.pfc.fca.framework.oozie.BaseAction;
+import com.mgarciaroig.fca.analysis.model.FormalConcept;
+import com.mgarciaroig.fca.analysis.model.FormalConceptBuildingKey;
+import com.mgarciaroig.fca.framework.error.FCAAnalizerException;
+import com.mgarciaroig.fca.framework.oozie.BaseAction;
 
 /**
  * Action to iteratively launch map-reduce actions until all formal concepts become generated

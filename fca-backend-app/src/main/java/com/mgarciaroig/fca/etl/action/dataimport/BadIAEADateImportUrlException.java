@@ -1,6 +1,6 @@
 package com.mgarciaroig.fca.etl.action.dataimport;
 
-import com.mgarciaroig.pfc.fca.framework.error.ReactorsFCAAnalizerException;
+import com.mgarciaroig.fca.framework.error.ReactorsFCAAnalizerException;
 
 /**
  * Class modelizing an error importing IAEA data file from remote location 

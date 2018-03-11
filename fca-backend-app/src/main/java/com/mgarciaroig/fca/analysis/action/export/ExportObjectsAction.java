@@ -29,8 +29,8 @@ import org.apache.hadoop.io.SequenceFile.Reader.Option;
 import org.apache.hadoop.io.WritableComparable;
 import org.apache.hadoop.util.ReflectionUtils;
 
-import com.mgarciaroig.pfc.fca.framework.error.FCAAnalizerException;
-import com.mgarciaroig.pfc.fca.framework.oozie.BaseAction;
+import com.mgarciaroig.fca.framework.error.FCAAnalizerException;
+import com.mgarciaroig.fca.framework.oozie.BaseAction;
 
 /**
  * Action to export all object and attributes data from hadoop cluster to database

@@ -4,7 +4,7 @@ import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNull;
 
 import org.junit.Test;
-import com.mgarciaroig.pfc.fca.etl.action.dataconvert.FieldType;
+import com.mgarciaroig.fca.etl.action.dataconvert.FieldType;
 
 public class DoubleFieldTransformerTest {
 	

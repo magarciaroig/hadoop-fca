@@ -8,7 +8,7 @@ import java.util.TimeZone;
 
 import org.apache.log4j.Logger;
 
-import com.mgarciaroig.pfc.fca.etl.action.dataconvert.FieldType;
+import com.mgarciaroig.fca.etl.action.dataconvert.FieldType;
 
 class DateFieldTransformer implements Transformer {
 	

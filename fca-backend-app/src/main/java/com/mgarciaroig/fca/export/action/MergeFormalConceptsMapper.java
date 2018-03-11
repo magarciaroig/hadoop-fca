@@ -5,8 +5,8 @@ import java.io.IOException;
 import org.apache.hadoop.io.NullWritable;
 import org.apache.hadoop.mapreduce.Mapper;
 
-import com.mgarciaroig.pfc.fca.analysis.model.FormalConcept;
-import com.mgarciaroig.pfc.fca.analysis.model.FormalConceptBuildingKey;
+import com.mgarciaroig.fca.analysis.model.FormalConcept;
+import com.mgarciaroig.fca.analysis.model.FormalConceptBuildingKey;
 
 /**
  * Mapper to merge all generated formal concept in a single sequence file

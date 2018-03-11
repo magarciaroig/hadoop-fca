@@ -19,7 +19,7 @@ import org.apache.hadoop.io.Text;
 import org.apache.hadoop.io.Writable;
 import org.apache.log4j.Logger;
 
-import com.mgarciaroig.pfc.fca.etl.action.dataprepare.Field;
+import com.mgarciaroig.fca.etl.action.dataprepare.Field;
 
 /*
  * Utility Class to persist records to a HDFS sequence file

@@ -2,7 +2,7 @@ package com.mgarciaroig.fca.analysis.model;
 
 import java.util.Collection;
 
-import com.mgarciaroig.pfc.fca.framework.error.FCAAnalizerException;
+import com.mgarciaroig.fca.framework.error.FCAAnalizerException;
 
 /**
  * Class that modelizes an error trying to construct a new formal context; but passing one or more attributes not shared by all of the objects

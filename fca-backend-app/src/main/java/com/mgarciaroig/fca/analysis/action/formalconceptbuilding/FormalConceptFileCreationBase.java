@@ -6,12 +6,12 @@ import org.apache.hadoop.fs.Path;
 import org.apache.hadoop.io.SequenceFile;
 import org.apache.hadoop.io.SequenceFile.Writer;
 
-import com.mgarciaroig.pfc.fca.analysis.action.formalconceptbuilding.error.UnableToWriteFornalConcept;
+import com.mgarciaroig.fca.analysis.action.formalconceptbuilding.error.UnableToWriteFornalConcept;
 
-import com.mgarciaroig.pfc.fca.analysis.model.FormalConcept;
-import com.mgarciaroig.pfc.fca.analysis.model.FormalConceptBuildingKey;
-import com.mgarciaroig.pfc.fca.analysis.persistence.FormalContextItemRepository;
-import com.mgarciaroig.pfc.fca.framework.oozie.BaseAction;
+import com.mgarciaroig.fca.analysis.model.FormalConcept;
+import com.mgarciaroig.fca.analysis.model.FormalConceptBuildingKey;
+import com.mgarciaroig.fca.analysis.persistence.FormalContextItemRepository;
+import com.mgarciaroig.fca.framework.oozie.BaseAction;
 
 public abstract class FormalConceptFileCreationBase extends BaseAction {
 	

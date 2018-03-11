@@ -12,9 +12,9 @@ import org.apache.hadoop.io.NullWritable;
 import org.apache.hadoop.io.SequenceFile;
 import org.apache.hadoop.io.SequenceFile.Reader.Option;
 
-import com.mgarciaroig.pfc.fca.analysis.model.FormalConcept;
-import com.mgarciaroig.pfc.fca.analysis.persistence.FormalContextItemRepository;
-import com.mgarciaroig.pfc.fca.framework.error.FCAAnalizerException;
+import com.mgarciaroig.fca.analysis.model.FormalConcept;
+import com.mgarciaroig.fca.analysis.persistence.FormalContextItemRepository;
+import com.mgarciaroig.fca.framework.error.FCAAnalizerException;
 
 /**
  * Action to export all formal concepts and attributes data from hadoop cluster to database

@@ -1,6 +1,6 @@
 package com.mgarciaroig.fca.etl.action.dataprepare;
 
-import com.mgarciaroig.pfc.fca.etl.action.dataconvert.FieldType;
+import com.mgarciaroig.fca.etl.action.dataconvert.FieldType;
 
 /**
  * ETL field abstraction

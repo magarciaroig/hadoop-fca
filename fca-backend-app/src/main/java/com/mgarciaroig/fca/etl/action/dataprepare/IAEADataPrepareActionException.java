@@ -1,6 +1,6 @@
 package com.mgarciaroig.fca.etl.action.dataprepare;
 
-import com.mgarciaroig.pfc.fca.framework.error.ReactorsFCAAnalizerException;
+import com.mgarciaroig.fca.framework.error.ReactorsFCAAnalizerException;
 
 public class IAEADataPrepareActionException extends ReactorsFCAAnalizerException {
 

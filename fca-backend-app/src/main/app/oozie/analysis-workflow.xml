@@ -16,12 +16,12 @@
     		<configuration>
     			<property>
 	                <name>mapreduce.map.class</name>
-	                <value>com.mgarciaroig.pfc.fca.analysis.action.dataprepare.FormalContextDataPrepareMapper</value>
+	                <value>com.mgarciaroig.fca.analysis.action.dataprepare.FormalContextDataPrepareMapper</value>
 	            </property>
 	            
 	            <property>
 	                <name>mapreduce.reduce.class</name>
-	                <value>com.mgarciaroig.pfc.fca.analysis.action.dataprepare.FormalContextDataPrepareReducer</value>
+	                <value>com.mgarciaroig.fca.analysis.action.dataprepare.FormalContextDataPrepareReducer</value>
 	            </property>
 	            	            
 	            <property>
@@ -110,7 +110,7 @@
 	                <value>${analysisFcaMaxConceptHdfsPath}</value>
 	            </property>	                                
 			</configuration>
-            <main-class>com.mgarciaroig.pfc.fca.analysis.action.formalconceptbuilding.InitialFormalConceptFileCreationAction</main-class>     
+            <main-class>com.mgarciaroig.fca.analysis.action.formalconceptbuilding.InitialFormalConceptFileCreationAction</main-class>
             <capture-output />       
         </java>
         <ok to="fca-min-formal-concept-creation"/>
@@ -137,7 +137,7 @@
 	                <value>${analysisFcaMinConceptHdfsPath}</value>
 	            </property>	                                
 			</configuration>
-            <main-class>com.mgarciaroig.pfc.fca.analysis.action.formalconceptbuilding.MinimalFormalConceptCreationAction</main-class>     
+            <main-class>com.mgarciaroig.fca.analysis.action.formalconceptbuilding.MinimalFormalConceptCreationAction</main-class>
             <capture-output />       
         </java>
         <ok to="fca-iteratively-formal-concept-creation"/>
@@ -172,7 +172,7 @@
 	                <value>${analysisFcaMaxIterations}</value>
 	            </property>	            	            
 			</configuration>
-            <main-class>com.mgarciaroig.pfc.fca.analysis.action.formalconceptbuilding.IterativelyFormalConceptCreationAction</main-class>     
+            <main-class>com.mgarciaroig.fca.analysis.action.formalconceptbuilding.IterativelyFormalConceptCreationAction</main-class>
             <capture-output />       
         </java>
         <ok to="end"/>

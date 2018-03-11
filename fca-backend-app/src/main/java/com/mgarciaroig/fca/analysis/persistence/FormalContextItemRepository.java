@@ -8,7 +8,7 @@ import java.util.Collection;
 import java.util.List;
 import java.util.TreeSet;
 
-import com.mgarciaroig.pfc.fca.analysis.model.FormalContextItem;
+import com.mgarciaroig.fca.analysis.model.FormalContextItem;
 import org.apache.hadoop.conf.Configuration;
 import org.apache.hadoop.fs.FileStatus;
 import org.apache.hadoop.fs.FileSystem;

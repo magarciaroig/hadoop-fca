@@ -1,6 +1,6 @@
 package com.mgarciaroig.fca.etl.action.dataconvert;
 
-import com.mgarciaroig.pfc.fca.framework.error.ReactorsFCAAnalizerException;
+import com.mgarciaroig.fca.framework.error.ReactorsFCAAnalizerException;
 
 public class IAEADataConvertActionException extends
 		ReactorsFCAAnalizerException {

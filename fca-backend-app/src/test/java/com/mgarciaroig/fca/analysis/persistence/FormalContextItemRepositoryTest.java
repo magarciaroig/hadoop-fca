@@ -6,7 +6,7 @@ import java.io.IOException;
 import java.util.Arrays;
 import java.util.List;
 
-import com.mgarciaroig.pfc.fca.analysis.model.FormalContextItem;
+import com.mgarciaroig.fca.analysis.model.FormalContextItem;
 import org.apache.hadoop.conf.Configuration;
 import org.apache.hadoop.fs.FileSystem;
 import org.apache.hadoop.fs.Path;

@@ -34,12 +34,12 @@
     		<configuration>
     			<property>
 	                <name>mapreduce.map.class</name>
-	                <value>com.mgarciaroig.pfc.fca.export.action.MergeFormalConceptsMapper</value>
+	                <value>com.mgarciaroig.fca.export.action.MergeFormalConceptsMapper</value>
 	            </property>
 	            
 	            <property>
 	                <name>mapreduce.reduce.class</name>
-	                <value>com.mgarciaroig.pfc.fca.export.action.MergeFormalConceptsReducer</value>
+	                <value>com.mgarciaroig.fca.export.action.MergeFormalConceptsReducer</value>
 	            </property>
 	            	            
 	            <property>
@@ -64,12 +64,12 @@
 	            
 	            <property>
 	                <name>mapred.input.key.class</name>
-	                <value>com.mgarciaroig.pfc.fca.analysis.model.FormalConceptBuildingKey</value>
+	                <value>com.mgarciaroig.fca.analysis.model.FormalConceptBuildingKey</value>
 	            </property>
 	            
 	            <property>
 	                <name>mapred.input.value.class</name>
-	                <value>com.mgarciaroig.pfc.fca.analysis.model.FormalConcept</value>
+	                <value>com.mgarciaroig.fca.analysis.model.FormalConcept</value>
 	            </property>
 	            
 	            <property>
@@ -79,7 +79,7 @@
 	            
 	            <property>
 	                <name>mapred.mapoutput.value.class</name>
-	                <value>com.mgarciaroig.pfc.fca.analysis.model.FormalConcept</value>
+	                <value>com.mgarciaroig.fca.analysis.model.FormalConcept</value>
 	            </property>
 	            
 	            <property>
@@ -89,7 +89,7 @@
 	            
 	            <property>
 	                <name>mapred.output.value.class</name>
-	                <value>com.mgarciaroig.pfc.fca.analysis.model.FormalConcept</value>
+	                <value>com.mgarciaroig.fca.analysis.model.FormalConcept</value>
 	            </property>
 	            	            	            
 	            <property>
@@ -125,7 +125,7 @@
 	                <value>${etlHdfsDiscretizedDir}</value>
 	            </property>	            	                               
 			</configuration>
-            <main-class>com.mgarciaroig.pfc.fca.export.action.ExportObjectsAction</main-class>
+            <main-class>com.mgarciaroig.fca.export.action.ExportObjectsAction</main-class>
             <capture-output />       
         </java>
         <ok to="export-formal-concepts"/>
@@ -148,7 +148,7 @@
 	                <value>${exportMergeConceptsHdfsPath}</value>
 	            </property>
 			</configuration>
-            <main-class>com.mgarciaroig.pfc.fca.export.action.ExportFormalConceptsAction</main-class>
+            <main-class>com.mgarciaroig.fca.export.action.ExportFormalConceptsAction</main-class>
             <capture-output />       
         </java>
         <ok to="end"/>

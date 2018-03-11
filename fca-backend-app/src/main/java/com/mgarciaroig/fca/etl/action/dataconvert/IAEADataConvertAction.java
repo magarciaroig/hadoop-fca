@@ -16,10 +16,10 @@ import org.apache.poi.ss.usermodel.FormulaEvaluator;
 import org.apache.poi.ss.usermodel.Row;
 import org.apache.poi.ss.usermodel.Sheet;
 
-import com.mgarciaroig.pfc.fca.etl.action.dataprepare.Field;
-import com.mgarciaroig.pfc.fca.etl.util.ExcelCellReader;
-import com.mgarciaroig.pfc.fca.framework.error.ReactorsFCAAnalizerException;
-import com.mgarciaroig.pfc.fca.framework.oozie.BaseAction;
+import com.mgarciaroig.fca.etl.action.dataprepare.Field;
+import com.mgarciaroig.fca.etl.util.ExcelCellReader;
+import com.mgarciaroig.fca.framework.error.ReactorsFCAAnalizerException;
+import com.mgarciaroig.fca.framework.oozie.BaseAction;
 
 public class IAEADataConvertAction extends BaseAction {
 	
@@ -74,7 +74,7 @@ public class IAEADataConvertAction extends BaseAction {
 											
 			final Sheet allReactorsSheet = workbook.getSheetAt(0);
 			
-			performeConversion(allReactorsSheet, writer);									
+			performConversion(allReactorsSheet, writer);
 		}
 		finally {
 			if (workbook != null) workbook.close();
@@ -83,7 +83,7 @@ public class IAEADataConvertAction extends BaseAction {
 		}				
 	}
 	
-	private void performeConversion(final Sheet allReactorsSheet, final SequenceFile.Writer writer) throws IOException{
+	private void performConversion(final Sheet allReactorsSheet, final SequenceFile.Writer writer) throws IOException{
 				
 		final FormulaEvaluator evaluator = allReactorsSheet.getWorkbook().getCreationHelper().createFormulaEvaluator();
 		final ExcelCellReader cellReader = new ExcelCellReader(evaluator);

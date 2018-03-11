@@ -4,8 +4,8 @@ import java.io.IOException;
 import java.util.Map.Entry;
 import java.util.TreeMap;
 
-import com.mgarciaroig.pfc.fca.etl.action.discretization.DiscretizationType;
-import com.mgarciaroig.pfc.fca.etl.action.discretization.codifier.FieldCodesRetriever;
+import com.mgarciaroig.fca.etl.action.discretization.DiscretizationType;
+import com.mgarciaroig.fca.etl.action.discretization.codifier.FieldCodesRetriever;
 import org.apache.hadoop.conf.Configuration;
 import org.apache.hadoop.fs.FileSystem;
 import org.apache.hadoop.fs.Path;
@@ -17,8 +17,8 @@ import org.apache.hadoop.io.Writable;
 import org.apache.hadoop.io.WritableComparable;
 import org.apache.hadoop.mapreduce.Mapper;
 
-import com.mgarciaroig.pfc.fca.etl.action.dataprepare.Field;
-import com.mgarciaroig.pfc.fca.etl.action.discretization.codifier.CodifierFilter;
+import com.mgarciaroig.fca.etl.action.dataprepare.Field;
+import com.mgarciaroig.fca.etl.action.discretization.codifier.CodifierFilter;
 
 public class FormalContextMapper extends Mapper<NullWritable, SortedMapWritable, Text, SortedMapWritable> {
 	

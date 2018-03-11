@@ -8,7 +8,7 @@ import org.apache.hadoop.io.SortedMapWritable;
 import org.apache.hadoop.io.Writable;
 import org.apache.hadoop.io.WritableComparable;
 
-import com.mgarciaroig.pfc.fca.analysis.model.FormalContextItem;
+import com.mgarciaroig.fca.analysis.model.FormalContextItem;
 
 /**
  * Utility class to build a concept item from serialization types 

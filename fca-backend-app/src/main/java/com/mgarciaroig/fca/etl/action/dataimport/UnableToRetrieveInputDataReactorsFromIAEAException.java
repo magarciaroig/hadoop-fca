@@ -4,7 +4,7 @@ import java.net.URL;
 
 import org.apache.hadoop.fs.Path;
 
-import com.mgarciaroig.pfc.fca.framework.error.ReactorsFCAAnalizerException;
+import com.mgarciaroig.fca.framework.error.ReactorsFCAAnalizerException;
 
 /**
  * Modelizes an error importing remote reactors file 

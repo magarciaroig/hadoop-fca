@@ -4,9 +4,9 @@ import java.io.IOException;
 import java.util.Map.Entry;
 import java.util.Set;
 
-import com.mgarciaroig.pfc.fca.etl.action.dataprepare.Field;
-import com.mgarciaroig.pfc.fca.etl.action.discretization.DiscretizationClassifier;
-import com.mgarciaroig.pfc.fca.etl.action.discretization.DiscretizationType;
+import com.mgarciaroig.fca.etl.action.dataprepare.Field;
+import com.mgarciaroig.fca.etl.action.discretization.DiscretizationClassifier;
+import com.mgarciaroig.fca.etl.action.discretization.DiscretizationType;
 import org.apache.hadoop.io.NullWritable;
 import org.apache.hadoop.io.SortedMapWritable;
 import org.apache.hadoop.io.Text;

@@ -2,10 +2,10 @@ package com.mgarciaroig.fca.etl.action.discretization.codifier;
 
 import java.io.IOException;
 
-import com.mgarciaroig.pfc.fca.etl.action.discretization.DiscretizationClassifier;
-import com.mgarciaroig.pfc.fca.etl.action.discretization.DiscretizationType;
+import com.mgarciaroig.fca.etl.action.discretization.DiscretizationClassifier;
+import com.mgarciaroig.fca.etl.action.discretization.DiscretizationType;
 import org.apache.hadoop.conf.Configuration;
-import com.mgarciaroig.pfc.fca.etl.action.dataprepare.Field;
+import com.mgarciaroig.fca.etl.action.dataprepare.Field;
 
 /**
  * Class to filter and obtain required codification strategy for each field type

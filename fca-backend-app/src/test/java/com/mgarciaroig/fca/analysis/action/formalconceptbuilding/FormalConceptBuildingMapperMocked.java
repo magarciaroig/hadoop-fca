@@ -2,8 +2,8 @@ package com.mgarciaroig.fca.analysis.action.formalconceptbuilding;
 
 import java.io.IOException;
 
-import com.mgarciaroig.pfc.fca.analysis.model.AttributesUtil;
-import com.mgarciaroig.pfc.fca.analysis.persistence.FormalContextItemRepository;
+import com.mgarciaroig.fca.analysis.model.AttributesUtil;
+import com.mgarciaroig.fca.analysis.persistence.FormalContextItemRepository;
 
 class FormalConceptBuildingMapperMocked extends FormalConceptBuildingMapper{
 	

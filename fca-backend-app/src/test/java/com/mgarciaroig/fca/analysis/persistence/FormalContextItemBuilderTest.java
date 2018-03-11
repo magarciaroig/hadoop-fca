@@ -9,7 +9,7 @@ import org.apache.hadoop.io.SortedMapWritable;
 import org.apache.hadoop.io.Text;
 import org.junit.Test;
 
-import com.mgarciaroig.pfc.fca.analysis.model.FormalContextItem;
+import com.mgarciaroig.fca.analysis.model.FormalContextItem;
 
 public class FormalContextItemBuilderTest {
 	

@@ -1,6 +1,6 @@
 package com.mgarciaroig.fca.analysis.action.export;
 
-import com.mgarciaroig.pfc.fca.framework.error.FCAAnalizerException;
+import com.mgarciaroig.fca.framework.error.FCAAnalizerException;
 
 /**
  * Class modeling a generic error exporting data from hadoop cluster to database

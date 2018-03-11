@@ -2,7 +2,7 @@ package com.mgarciaroig.fca.export.action;
 
 import java.io.IOException;
 
-import com.mgarciaroig.pfc.fca.analysis.model.FormalConcept;
+import com.mgarciaroig.fca.analysis.model.FormalConcept;
 import org.apache.hadoop.io.NullWritable;
 import org.apache.hadoop.mapreduce.Reducer;
 

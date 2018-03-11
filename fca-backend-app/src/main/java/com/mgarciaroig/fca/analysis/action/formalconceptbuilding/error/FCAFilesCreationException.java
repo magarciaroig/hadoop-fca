@@ -2,7 +2,7 @@ package com.mgarciaroig.fca.analysis.action.formalconceptbuilding.error;
 
 import java.io.IOException;
 
-import com.mgarciaroig.pfc.fca.framework.error.FCAAnalizerException;
+import com.mgarciaroig.fca.framework.error.FCAAnalizerException;
 
 /**
  * Exception modeling an I/O error produced during fca processing operations

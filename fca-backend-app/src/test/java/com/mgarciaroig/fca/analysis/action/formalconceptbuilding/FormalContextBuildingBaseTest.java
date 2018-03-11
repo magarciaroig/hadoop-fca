@@ -13,15 +13,15 @@ import java.util.List;
 import java.util.TreeMap;
 import java.util.TreeSet;
 
-import com.mgarciaroig.pfc.fca.analysis.model.FormalConcept;
-import com.mgarciaroig.pfc.fca.analysis.model.FormalContextItem;
+import com.mgarciaroig.fca.analysis.model.FormalConcept;
+import com.mgarciaroig.fca.analysis.model.FormalContextItem;
 import org.apache.hadoop.mrunit.types.Pair;
 import org.mockito.invocation.InvocationOnMock;
 import org.mockito.stubbing.Answer;
 
-import com.mgarciaroig.pfc.fca.analysis.model.FormalConceptBuildingKey;
-import com.mgarciaroig.pfc.fca.analysis.model.FormalConceptNonConsistentAttributesException;
-import com.mgarciaroig.pfc.fca.analysis.persistence.FormalContextItemRepository;
+import com.mgarciaroig.fca.analysis.model.FormalConceptBuildingKey;
+import com.mgarciaroig.fca.analysis.model.FormalConceptNonConsistentAttributesException;
+import com.mgarciaroig.fca.analysis.persistence.FormalContextItemRepository;
 
 /**
  * Convenience utilities to implement map-reduce formal concept tests. I'm following the examples (with inputs and expected outputs) provided by Petr Krajca and Vilem Vychodil
